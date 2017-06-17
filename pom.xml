@@ -170,7 +170,7 @@
     <snapshotRepository>
         <id>snapshots</id>
         <name>crevise-snapshots</name>
-        <url>https://crevise.jfrog.io/crevise/ext-snapshot-local</url>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
     </snapshotRepository>
     </distributionManagement>
 
