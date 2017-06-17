@@ -1,8 +1,9 @@
 <html>
-<body>
+<Body bgcolor = Red text = yellow>
 <h1>Welcome To DevOps!!!</h>
-<h1> Sai + team</h1>
- <marquee> successfully completed </marquee>
+<h1> Sai + Team</h1>
+
+ <marquee> <h1> Successfully completed </h1> </marquee>
  
 <h3>Message : ${message}</h3>
 <h3>Counter : ${counter}</h3>	
