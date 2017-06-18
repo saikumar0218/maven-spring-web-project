@@ -1,39 +1,38 @@
-package com.mkyong.controller;
+package com.qaagility.javaee;
 
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-@Controller
-public class BaseController {
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-	private static int counter = 0;
-	private static final String VIEW_INDEX = "index";
-	private final static org.slf4j.Logger logger = LoggerFactory.getLogger(BaseController.class);
+/**
+ * Servlet implementation class HelloServlet
+ */
+@WebServlet("/helloServlet")
+public class HelloServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public HelloServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String welcome(ModelMap model) {
-
-		model.addAttribute("message", "Sai Kumar");
-		model.addAttribute("counter", ++counter);
-		logger.debug("[welcome] counter : {}", counter);
-
-		// Spring uses InternalResourceViewResolver and return back index.jsp
-		return VIEW_INDEX;
-
-	}
-
-	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
-	public String welcomeName(@PathVariable String name, ModelMap model) {
-
-		model.addAttribute("message", "Sai Kumar Project " + name);
-		model.addAttribute("counter", ++counter);
-		logger.debug("[welcomeName] counter : {}", counter);
-		return VIEW_INDEX;
-
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String yourName = request.getParameter("yourName");
+		PrintWriter writer = response.getWriter();
+		writer.println("<h1>Helloo " + yourName + "</h1>");
+		writer.close();
 	}
 
 }
