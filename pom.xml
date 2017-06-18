@@ -111,7 +111,17 @@
 				</configuration>
 			</plugin>
 
-
+<plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.1.1.v20140108</version>
+            <configuration>
+                <stopPort>9966</stopPort>
+                <stopKey>stopKey</stopKey>
+                <stopWait>20</stopWait>
+            </configuration>
+        </plugin>
+			
 			<plugin>
 			        <groupId>org.apache.maven.plugins</groupId>
 			        <artifactId>maven-surefire-plugin</artifactId>
