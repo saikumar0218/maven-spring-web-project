@@ -181,12 +181,12 @@
 	    </plugins>
 	  </reporting>
 	
-    <distributionManagement>
-    <snapshotRepository>
-        <id>snapshots</id>
-        <name>crevise-snapshots</name>
-        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-    </distributionManagement>
+   <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>devops-training-releases</name>
+        <url>http://localhost:8085/artifactory/ext-release-local</url>
+    </repository>
+</distributionManagement>
 
 </project>
